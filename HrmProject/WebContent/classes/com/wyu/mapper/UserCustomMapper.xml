@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wyu.mapper.UserCustomMapper" >
+  <resultMap id="UserCustomMap" type="com.wyu.pojo.User" >
+    <id column="number" property="number"/>
+    <result column="password" property="password"/>
+    <result column="role_id" property="roleId"/>
+    <result column="phone" property="phone"/>
+    <result column="createdate" property="createdate"/>
+    <result column="username" property="username"/>
+    <result column="remark" property="remark" />
+    <collection property="role" ofType="com.wyu.pojo.Role">
+	   <id column="rid" property="rid" />
+	    <result column="rname" property="rname" />
+	    <result column="rremark" property="rremark" />
+    </collection>
+  </resultMap>
+<select id="selectUserAndRoleName" resultMap="UserCustomMap">
+SELECT user.number,user.password, role.rname, user.phone, user.createdate,user.username, user.remark 
+	FROM user, role
+	WHERE user.role_id = role.rid
+</select>
+</mapper>

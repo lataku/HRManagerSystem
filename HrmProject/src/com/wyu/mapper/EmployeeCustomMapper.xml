@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wyu.mapper.EmployeeCustomMapper" >
+  <resultMap id="EmployeeCustomMap" type="com.wyu.pojo.Employee" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="dept_id" property="deptId" jdbcType="INTEGER" />
+    <result column="job_id" property="jobId" jdbcType="INTEGER" />
+    <result column="card_id" property="cardId" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="post_code" property="postCode" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="qq_num" property="qqNum" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="CHAR" />
+    <result column="party" property="party" jdbcType="CHAR" />
+    <result column="birthday" property="birthday" jdbcType="TIMESTAMP" />
+    <result column="race" property="race" jdbcType="VARCHAR" />
+    <result column="education" property="education" jdbcType="VARCHAR" />
+    <result column="speciality" property="speciality" jdbcType="VARCHAR" />
+    <result column="hobby" property="hobby" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+      <collection property="job" ofType="com.wyu.pojo.Job">
+	   <id column="jid" property="jid" />
+	    <result column="jname" property="jname" />
+	    <result column="jremark" property="jremark" />
+    </collection>
+      <collection property="dept" ofType="com.wyu.pojo.Dept">
+	   <id column="did" property="did" />
+	    <result column="dname" property="dname" />
+	    <result column="dremark" property="dremark" />
+    </collection>
+  </resultMap>
+  
+  <select id="selectAllEmployeesJoined" resultMap="EmployeeCustomMap">
+SELECT dept_id, job_id, employee.id,employee.name,dept.dname,job.jname,card_id,address,post_code,tel,phone,qq_num,email,sex,party,birthday,race,education,speciality,hobby,remark,create_date
+	FROM employee,job,dept
+	WHERE employee.dept_id = dept.did and employee.job_id = job.jid
+</select>
+
+</mapper>
