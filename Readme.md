@@ -26,43 +26,43 @@
 
 数据库共由7个数据表组成，分别为用户（user）表，权限（role）表，部门（dept）表，职位（job）表，员工（employee）表，公告（notice）表，文件上传（uploadfile）表。
 
-![img](file:///C:\Users\37186\AppData\Local\Temp\ksohtml32\wps1.jpg) 
+![img](image/wps1.jpg) 
 
 数据库E-R图
 
 ## 2.2数据库逻辑结构
 
-![img](file:///C:\Users\37186\AppData\Local\Temp\ksohtml32\wps2.jpg) 
+![img](image/wps2.jpg) 
 
 User表
 
-![img](file:///C:\Users\37186\AppData\Local\Temp\ksohtml32\wps3.jpg) 
+![img](image/wps3.jpg) 
 
 Dept表
 
-![img](file:///C:\Users\37186\AppData\Local\Temp\ksohtml32\wps4.jpg) 
+![img](image/wps4.jpg) 
 
 Job表
 
-![img](file:///C:\Users\37186\AppData\Local\Temp\ksohtml32\wps5.jpg) 
+![img](image/wps5.jpg) 
 
 Employee表
 
-![img](file:///C:\Users\37186\AppData\Local\Temp\ksohtml32\wps6.jpg) 
+![img](image/wps6.jpg) 
 
 Notice表
 
-![img](file:///C:\Users\37186\AppData\Local\Temp\ksohtml32\wps7.jpg) 
+![img](image/wps7.jpg) 
 
 Role表
 
-![img](file:///C:\Users\37186\AppData\Local\Temp\ksohtml32\wps8.jpg) 
+![img](image/wps8.jpg) 
 
 Uploadfile表
 
 ## 3.功能模块设计
 
-![img](file:///C:\Users\37186\AppData\Local\Temp\ksohtml32\wps9.jpg) 
+![img](image/wps9.jpg) 
 
 (1)主界面模块
 
